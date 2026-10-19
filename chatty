@@ -158,11 +158,20 @@ do
 
 		-k|--key)
 			option_key="true"
+
+			# optional key file - installed instead of typing the key
+
+			if [ -n "${2}" ] && [[ "${2}" != -* ]]
+			then
+				file_key_source="${2}"
+
+				shift
+			fi
 		;;
 
 		-h|--help)
 			echo
-			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k | -h"
+			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -h"
 			echo
 			echo -e "Note:                 Chat with OpenAI models from the terminal - interactive chat without a prompt."
 			echo -e "                      Prompt given or piped in: one answer on the standard output - nothing else."
@@ -211,7 +220,8 @@ do
 			echo
 			echo -e "-l, --list            [L]ist the models available to the API key."
 			echo
-			echo -e "-k, --key             Save the API [k]ey - asked once - kept private in ~/.config/chatty."
+			echo -e "-k, --key             Save the API [k]ey - typed masked or installed from a file - kept private in ~/.config/chatty."
+			echo -e "                      [ file ] [ Optional ]"
 			echo
 			echo -e "-h, --help            Show [h]elp and usage information."
 			echo
@@ -230,7 +240,7 @@ do
 
 		*)
 			echo
-			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k | -h"
+			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -h"
 			echo
 			echo -e "Unknown option: '${script} ${1}':"
 			echo -e "Type './${script} -h' for help and usage information."
@@ -307,24 +317,45 @@ chatty_key_load () {
 
 chatty_key_save () {
 
-	# api key asked once - masked - stored readable by the user only
+	# api key installed from a file or typed masked - stored readable by the user only
+	# first line of the file - spaces and line endings removed
 
-	frobulator.ipt "OpenAI API key:"
+	local text_key
 
-	frobulator.password
-
-	if [ -z "${password}" ]
+	if [ -n "${file_key_source}" ]
 	then
-		frobulator.err "No key entered"
+		if [ ! -r "${file_key_source}" ]
+		then
+			frobulator.err "Key file not found or not readable" "[ ${file_key_source} ]"
+
+			return 1
+		fi
+
+		IFS= read -r text_key < "${file_key_source}"
+	else
+		frobulator.ipt "OpenAI API key:"
+
+		frobulator.password
+
+		text_key="${password}"
+
+		unset password
+	fi
+
+	text_key="${text_key//[[:space:]]/}"
+
+	if [ -z "${text_key}" ]
+	then
+		frobulator.err "No key found" "[ ${file_key_source:-input} ]"
 
 		return 1
 	fi
 
 	mkdir -p "${directory_configuration}"
 
-	( umask 077 ; printf '%s\n' "${password}" > "${file_key}" )
+	( umask 077 ; printf '%s\n' "${text_key}" > "${file_key}" )
 
-	unset password
+	chmod 600 "${file_key}"
 
 	frobulator.scs "API key saved" "[ ${file_key/#${HOME}/\~} ]"
 }
