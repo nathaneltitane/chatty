@@ -169,63 +169,77 @@ do
 			fi
 		;;
 
+		-u|--uninstall)
+			option="uninstall"
+		;;
+
 		-h|--help)
 			echo
-			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -h"
+			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -u | -h"
 			echo
-			echo -e "Note:                 Chat with OpenAI models from the terminal - interactive chat without a prompt."
-			echo -e "                      Prompt given or piped in: one answer on the standard output - nothing else."
-			echo -e "                      API key read from OPENAI_API_KEY or saved once with '${script} -k'."
+			echo -e "Note:                Chat with OpenAI models from the terminal - interactive chat without a prompt."
+			echo -e "                     Prompt given or piped in: one answer on the standard output - nothing else."
+			echo -e "                     API key read from OPENAI_API_KEY or saved once with '${script} -k'."
 			echo
-			echo -e "                      Chat commands:"
+			echo -e "                     Chat commands:"
 			echo
-			echo -e "                      image: [description]    Generate an image - saved in ~/Pictures/chatty."
-			echo -e "                      command: [task]         Suggest a shell command - run only once confirmed."
-			echo -e "                      model: [id]             Show the details of a model."
-			echo -e "                      models                  List the available models."
-			echo -e "                      history                 Show the saved conversations."
-			echo -e "                      clear                   Start a new conversation - context emptied."
-			echo -e "                      exit | q                Quit."
+			echo -e "                     image: [description]    Generate an image - saved in ~/Pictures/chatty."
+			echo -e "                     command: [task]         Suggest a shell command - run only once confirmed."
+			echo -e "                     model: [id]             Show the details of a model."
+			echo -e "                     models                  List the available models."
+			echo -e "                     history                 Show the saved conversations."
+			echo -e "                     clear                   Start a new conversation - context emptied."
+			echo -e "                     exit | q                Quit."
 			echo
 			echo -e "Options:"
 			echo
-			echo -e "-p, --prompt          Ask a single [p]rompt and print the answer."
+			echo -e "-p, --prompt         Ask a single [p]rompt and print the answer."
 			echo
-			echo -e "-f, --file            Read the prompt from a [f]ile."
+			echo -e "-f, --file           Read the prompt from a [f]ile."
 			echo
-			echo -e "-s, --system          [S]ystem prompt - instructions kept for the whole conversation - text or file."
+			echo -e "-s, --system         Set the [s]ystem prompt - instructions kept for the whole conversation - text or file."
 			echo
-			echo -e "-m, --model           Chat [m]odel."
-			echo -e "                      [ ${model_chat_default} ] [ Default ]"
+			echo -e "-m, --model          Set the chat [m]odel."
 			echo
-			echo -e "-r, --reasoning       [R]easoning effort - reasoning models only."
-			echo -e "                      [ none | low | medium | high ]"
+			echo -e "                     [ ${model_chat_default} ] [ Default ]"
 			echo
-			echo -e "-t, --temperature     Sampling [t]emperature - models that accept it only."
-			echo -e "                      [ 0 - 2 ]"
+			echo -e "-r, --reasoning      Set the [r]easoning effort - reasoning models only."
 			echo
-			echo -e "-x, --max-tokens      Ma[x]imum tokens per answer - reasoning included."
-			echo -e "                      [ ${count_tokens_maximum_default} ] [ Default ]"
+			echo -e "                     [ none | low | medium | high ]"
 			echo
-			echo -e "-c, --context         Conversation [c]ontext kept - estimated tokens - oldest messages dropped first."
-			echo -e "                      [ ${count_tokens_context_default} ] [ Default ]"
+			echo -e "-t, --temperature    Set the sampling [t]emperature - models that accept it only."
 			echo
-			echo -e "-i, --image-model     [I]mage model."
-			echo -e "                      [ ${model_image_default} ] [ Default ]"
+			echo -e "                     [ 0 - 2 ]"
 			echo
-			echo -e "-z, --size            Image si[z]e - width x height."
-			echo -e "                      [ ${size_image_default} ] [ Default ]"
+			echo -e "-x, --max-tokens     Set the ma[x]imum tokens per answer - reasoning included."
 			echo
-			echo -e "-b, --big             [B]ig prompts - multiple lines - [ ↵ ] then [ ctrl + d ] to send."
+			echo -e "                     [ ${count_tokens_maximum_default} ] [ Default ]"
 			echo
-			echo -e "-l, --list            [L]ist the models available to the API key."
+			echo -e "-c, --context        Set the conversation [c]ontext kept - estimated tokens - oldest messages dropped first."
 			echo
-			echo -e "-k, --key             Save the API [k]ey - typed masked or installed from a file - kept private in ~/.config/chatty."
-			echo -e "                      [ file ] [ Optional ]"
+			echo -e "                     [ ${count_tokens_context_default} ] [ Default ]"
 			echo
-			echo -e "-h, --help            Show [h]elp and usage information."
+			echo -e "-i, --image-model    Set the [i]mage model."
 			echo
-			echo -e "'${script}'           [ Version // ${version} ]"
+			echo -e "                     [ ${model_image_default} ] [ Default ]"
+			echo
+			echo -e "-z, --size           Set the image si[z]e - width x height."
+			echo
+			echo -e "                     [ ${size_image_default} ] [ Default ]"
+			echo
+			echo -e "-b, --big            Write [b]ig prompts - multiple lines - [ ↵ ] then [ ctrl + d ] to send."
+			echo
+			echo -e "-l, --list           Show the [l]ist of models available to the API key."
+			echo
+			echo -e "-k, --key            Save the API [k]ey - typed masked or installed from a file - kept private in ~/.config/chatty."
+			echo
+			echo -e "                     [ file ] [ Optional ]"
+			echo
+			echo -e "-u, --uninstall      Run [u]ninstallation of ${script} - installed copies removed - key and history once confirmed."
+			echo
+			echo -e "-h, --help           Show [h]elp and usage information."
+			echo
+			echo -e "'${script}'          [ Version // ${version} ]"
 			echo
 
 			exit
@@ -240,7 +254,7 @@ do
 
 		*)
 			echo
-			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -h"
+			echo -e "Usage: ./${script} [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -u | -h"
 			echo
 			echo -e "Unknown option: '${script} ${1}':"
 			echo -e "Type './${script} -h' for help and usage information."
@@ -300,6 +314,64 @@ option_multiline="${option_multiline:-false}"
 # conversation - json array of role and content messages - system prompt added per request
 
 json_messages="[]"
+
+# uninstall ────────────────────────────────────────────────────────────────────
+
+# installed copies of the script removed - files it made and packages kept
+
+if [ "${option}" = "uninstall" ]
+then
+	count_removed=0
+
+	# every copy of the script on the search path - user and system wide
+
+	mapfile -t list_paths_installed < <(type -a -P "${script}")
+
+	for path_installed in "${list_paths_installed[@]}"
+	do
+		directory_installed="${path_installed%/*}"
+
+		if [ -w "${directory_installed}" ]
+		then
+			frobulator.delete "${directory_installed}" "${script}"
+
+			count_removed=$(( count_removed + 1 ))
+		else
+			frobulator.wrn "Superuser needed to remove" "[ sudo rm ${path_installed} ]"
+		fi
+	done
+
+	# api key and history - removed once confirmed - generated images kept
+
+	if [ -d "${directory_configuration}" ] || [ -d "${directory_data}" ]
+	then
+		frobulator.qst "Remove the saved API key and history? [ y / N ]"
+
+		frobulator.read -r answer_remove
+
+		if [[ "${answer_remove}" =~ ^[yY] ]]
+		then
+			for directory_remove in "${directory_configuration}" "${directory_data}"
+			do
+				if [ -d "${directory_remove}" ]
+				then
+					frobulator.delete "${directory_remove%/*}" "${directory_remove##*/}"
+
+					count_removed=$(( count_removed + 1 ))
+				fi
+			done
+		fi
+	fi
+
+	if [ "${count_removed}" -eq 0 ]
+	then
+		frobulator.inf "No installed copy found" "[ ${script} ]"
+	else
+		frobulator.scs "Uninstalled" "[ ${script} ]"
+	fi
+
+	exit
+fi
 
 # functions ────────────────────────────────────────────────────────────────────
 

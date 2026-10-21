@@ -237,7 +237,7 @@ fi
 ### Options
 
 ```
-Usage: ./chatty [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -h
+Usage: ./chatty [-p Prompt | -f File] [-s System] [-m Model] [-r Effort] [-t Temperature] [-x Tokens] [-c Tokens] [-i Model] [-z Size] [-b] | -l | -k [File] | -u | -h
 ```
 
 #### -p, --prompt [text]
@@ -331,6 +331,14 @@ List the models available to your API key, one per line, then exit.
 #### -k, --key [file]
 
 Save the API key - typed or pasted at a masked prompt, or installed from a file. See [API Key](#api-key).
+
+#### -u, --uninstall
+
+Remove every installed copy of chatty found on your `PATH`, then ask whether to remove the saved API key and history too. Generated images in `~/Pictures/chatty` are always kept. Copies in system folders such as `/usr/local/bin` need `sudo` - chatty tells you the command.
+
+```
+chatty -u
+```
 
 #### -h, --help
 
@@ -577,11 +585,10 @@ git pull
 
 Reinstall afterwards if you installed it to `/usr/local/bin` or `~/.local/bin`.
 
-Remove Chatty, your key and your history ↴
+Remove Chatty - asks before removing your key and history ↴
 
 ```
-sudo rm /usr/local/bin/chatty
-rm -r ~/.config/chatty ~/.local/share/chatty
+chatty -u
 ```
 
 Generated images in `~/Pictures/chatty` are kept - remove them separately if you want.
