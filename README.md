@@ -1,6 +1,13 @@
-[![Donate](https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&logo=paypal&label=Donate)](https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ) Show your appreciation with a PayPal donation!
-
-[![Star](https://img.shields.io/github/stars/nathaneltitane/chatty.svg?style=for-the-badge&logo=github&label=Star&color=2f343f)](https://github.com/nathaneltitane/chatty) Useful? Star the repository - it helps others find it.
+<table>
+<tr>
+<td><a href="https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ"><img src="https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&amp;logo=paypal&amp;label=Donate" alt="Donate"></a></td>
+<td>Show your appreciation with a PayPal donation!</td>
+</tr>
+<tr>
+<td><a href="https://github.com/nathaneltitane/chatty"><img src="https://img.shields.io/github/stars/nathaneltitane/chatty.svg?style=for-the-badge&amp;logo=github&amp;label=Star&amp;color=2f343f" alt="Star"></a></td>
+<td>Useful? Star the repository - it helps others find it.</td>
+</tr>
+</table>
 
 [[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty) [ Version // 2026-10-17 ]
 
@@ -643,4 +650,9 @@ Chatty is released under the [GNU General Public License v3.0](LICENSE.md).
 
 [[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty) [ Version // 2026-10-17 ]
 
-### [![Donate](https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&logo=paypal&label=Donate)](https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ) Enjoying Chatty? Show your appreciation with a PayPal donation!
+<table>
+<tr>
+<td><a href="https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ"><img src="https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&amp;logo=paypal&amp;label=Donate" alt="Donate"></a></td>
+<td><strong>Enjoying Chatty? Show your appreciation with a PayPal donation!</strong></td>
+</tr>
+</table>
