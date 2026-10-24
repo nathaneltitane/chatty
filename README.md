@@ -8,7 +8,7 @@ Useful? Star the repository - it helps others find it.
 
 ---
 
-[[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty)-----------------------------------------------------------------------------------------------------------------------------[ Version // 2026-10-17 ]
+[[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty)-------------------------------------------------------------------------------------------[ Version // 2026-10-17 ]
 
 ---
 
@@ -647,7 +647,7 @@ Chatty is released under the [GNU General Public License v3.0](LICENSE.md).
 
 ---
 
-[[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty)-----------------------------------------------------------------------------------------------------------------------------[ Version // 2026-10-17 ]
+[[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty)-------------------------------------------------------------------------------------------[ Version // 2026-10-17 ]
 
 ---
 
