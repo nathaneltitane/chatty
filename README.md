@@ -647,8 +647,7 @@ Chatty is released under the [GNU General Public License v3.0](LICENSE.md).
 
 ---
 
-[![Donate](https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&logo=paypal&label=Donate)](https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ)<br>
-Show your appreciation with a PayPal donation!
+[[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty) [ Version // 2026-10-17 ]
 
 ---
 
@@ -657,4 +656,5 @@ Useful? Star the repository - it helps others find it.
 
 ---
 
-[[ Chatty // Project Page ]](https://github.com/nathaneltitane/chatty) [ Version // 2026-10-17 ]
+[![Donate](https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&logo=paypal&label=Donate)](https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ)<br>
+Show your appreciation with a PayPal donation!
