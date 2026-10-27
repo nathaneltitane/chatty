@@ -14,7 +14,7 @@ Useful? Star the repository - it helps others find it.
 
 ### NOTICE
 
-10-17-2026 ↴
+2026-10-17 ↴
 
 - Full rewrite on [Frobulator](https://github.com/nathaneltitane/frobulator)
 - Current OpenAI models - chat: `gpt-6-luna` - images: `gpt-image-2.5-flare`
