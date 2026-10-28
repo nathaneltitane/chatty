@@ -631,8 +631,6 @@ Chatty is released under the [GNU General Public License v3.0](LICENSE.md).
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/nathaneltitane/gutengrab?style=for-the-badge&logo=gnubash&logoColor=ffffff&label=GutenGrab)](https://github.com/nathaneltitane/gutengrab)
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/nathaneltitane/chatty?style=for-the-badge&logo=gnubash&logoColor=ffffff&label=CHATTY)](https://github.com/nathaneltitane/chatty)
-
 [![GitHub Repo stars](https://img.shields.io/github/stars/nathaneltitane/l2cu?style=for-the-badge&logo=gnubash&logoColor=ffffff&label=L²CU)](https://github.com/nathaneltitane/l2cu)
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/nathaneltitane/terminal?style=for-the-badge&logo=gnubash&logoColor=ffffff&label=TERMINAL)](https://github.com/nathaneltitane/terminal)
