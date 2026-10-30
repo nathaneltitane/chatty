@@ -1,4 +1,4 @@
-<p align="center"><b>ChatGPT in your Linux terminal</b><br>No browser, no clutter</p>
+<p align="center"><b>ChatGPT in your Linux terminal</b><br>NO BROWSER. NO CLUTTER.</p>
 
 ---
 
