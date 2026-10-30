@@ -1,4 +1,4 @@
-<p align="center"><b>ChatGPT in your Linux terminal</b><br>NO BROWSER. NO CLUTTER.</p>
+<p align="center"><img src="https://raw.githubusercontent.com/nathaneltitane/chatty/main/chatty.svg" alt="chatty"><br><b>ChatGPT in your Linux terminal</b><br>NO BROWSER. NO CLUTTER.</p>
 
 ---
 
