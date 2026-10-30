@@ -1,3 +1,7 @@
+<p align="center"><b>ChatGPT in your Linux terminal</b><br>No browser, no clutter</p>
+
+---
+
 [![Donate](https://img.shields.io/badge/Paypal-2f343f.svg?style=for-the-badge&logo=paypal&label=Donate)](https://www.paypal.com/donate?hosted_button_id=ZW3CDCANHJCWJ)<br>
 Show your appreciation with a PayPal donation!
 
@@ -10,12 +14,15 @@ Useful? Star the repository - it helps others find it.
 
 ### NOTICE
 
-2026-10-17 ↴
+  <details open>
+  <summary>2026-10-17</summary>
 
-- Full rewrite on [Frobulator](https://github.com/nathaneltitane/frobulator)
-- Current OpenAI models - chat: `gpt-6-luna` - images: `gpt-image-2.5-flare`
-- API key installed once - typed, pasted or from a file - kept private in `~/.config/chatty`
-- Clean output for pipes and redirections - answers only
+  - Full rewrite on [Frobulator](https://github.com/nathaneltitane/frobulator)
+  - Current OpenAI models - chat: `gpt-6-luna` - images: `gpt-image-2.5-flare`
+  - API key installed once - typed, pasted or from a file - kept private in `~/.config/chatty`
+  - Clean output for pipes and redirections - answers only
+
+  </details>
 
 ---
 
